@@ -1,0 +1,70 @@
+defaults nosave
+
+
+# version
+# Betaflight / STM32F405 (S405) 4.4.2 Jun  1 2023 / 02:07:34 (23d066d08) MSP API: 1.45
+
+# config: YES
+
+# start the command batch
+batch start
+
+# reset configuration to default settings
+defaults nosave
+
+board_name OMNIBUSF4SD
+manufacturer_id AIRB
+mcu_id 0048004d3436510538363236
+signature 
+
+# serial
+serial 0 64 115200 57600 0 115200
+serial 5 131137 115200 57600 0 115200
+
+# aux
+aux 0 0 0 1825 2100 0 0
+aux 1 1 1 900 1150 0 0
+aux 2 2 1 1350 1625 0 0
+aux 3 13 2 1775 2100 0 0
+
+# master
+set acc_calibration = 23,-162,17,1
+set serialrx_provider = SBUS
+set motor_pwm_protocol = DSHOT300
+set pid_process_denom = 4
+set osd_canvas_width = 30
+set osd_canvas_height = 13
+set gyro_1_sensor_align = CW90FLIP
+set gyro_1_align_pitch = 1800
+set gyro_1_align_yaw = 900
+
+profile 0
+
+# profile 0
+set d_pitch = 48
+set d_roll = 42
+set d_min_roll = 31
+set d_min_pitch = 35
+set simplified_d_gain = 105
+
+profile 1
+
+profile 2
+
+profile 3
+
+# restore original profile selection
+profile 0
+
+rateprofile 0
+
+rateprofile 1
+
+rateprofile 2
+
+rateprofile 3
+
+# restore original rateprofile selection
+rateprofile 0
+
+# save configuration

@@ -1,0 +1,121 @@
+defaults nosave
+
+
+# version
+# Betaflight / STM32F405 (S405) 4.4.2 Jun  1 2023 / 02:07:34 (23d066d08) MSP API: 1.45
+
+# config: YES
+
+# start the command batch
+batch start
+
+# reset configuration to default settings
+defaults nosave
+
+board_name OMNIBUSF4SD
+manufacturer_id AIRB
+mcu_id 0048004d3436510538363236
+signature 
+
+# feature
+feature -AIRMODE
+
+# serial
+serial 0 64 115200 57600 0 115200
+serial 5 131137 115200 57600 0 115200
+
+# aux
+aux 0 0 0 1725 2100 0 0
+aux 1 1 1 900 1150 0 0
+aux 2 2 1 1350 1625 0 0
+aux 3 13 2 1800 2100 0 0
+aux 4 28 3 1825 2100 0 0
+
+# vtxtable
+vtxtable bands 5
+vtxtable channels 8
+vtxtable band 1 BOSCAM_A A CUSTOM  5865 5845 5825 5805 5785 5765 5745 5725
+vtxtable band 2 BOSCAM_B B CUSTOM  5733 5752 5771 5790 5809 5828 5847 5866
+vtxtable band 3 BOSCAM_E E CUSTOM  5705 5685 5665 5645 5885 5905 5925 5945
+vtxtable band 4 FATSHARK F CUSTOM  5740 5760 5780 5800 5820 5840 5860 5880
+vtxtable band 5 RACEBAND R CUSTOM  5658 5695 5732 5769 5806 5843 5880 5917
+vtxtable powerlevels 4
+vtxtable powervalues 14 20 26 36
+vtxtable powerlabels 25 100 400 MAX
+
+# rxfail
+rxfail 5 s 2000
+
+# master
+set dyn_notch_count = 1
+set dyn_notch_q = 500
+set acc_calibration = -23,-125,15,1
+set serialrx_provider = SBUS
+set dshot_bidir = ON
+set motor_pwm_protocol = DSHOT300
+set motor_output_reordering = 2,3,0,1,4,5,6,7
+set yaw_motors_reversed = ON
+set pid_process_denom = 2
+set osd_rssi_pos = 2522
+set osd_tim_2_pos = 2103
+set osd_vtx_channel_pos = 2497
+set osd_current_pos = 2088
+set osd_mah_drawn_pos = 2097
+set osd_warnings_pos = 14762
+set osd_avg_cell_voltage_pos = 2081
+set osd_canvas_width = 30
+set osd_canvas_height = 16
+set vtx_band = 5
+set vtx_channel = 1
+set vtx_power = 2
+set vtx_freq = 5658
+set vcd_video_system = PAL
+set gyro_1_sensor_align = CW90FLIP
+set gyro_1_align_pitch = 1800
+set gyro_1_align_yaw = 900
+
+profile 0
+
+# profile 0
+set anti_gravity_gain = 40
+set p_pitch = 59
+set i_pitch = 89
+set d_pitch = 44
+set f_pitch = 220
+set p_roll = 53
+set i_roll = 81
+set d_roll = 38
+set f_roll = 201
+set p_yaw = 53
+set i_yaw = 81
+set f_yaw = 201
+set d_min_roll = 28
+set d_min_pitch = 32
+set thrust_linear = 20
+set simplified_master_multiplier = 120
+set simplified_i_gain = 85
+set simplified_d_gain = 80
+set simplified_feedforward_gain = 140
+set simplified_pitch_pi_gain = 105
+
+profile 1
+
+profile 2
+
+profile 3
+
+# restore original profile selection
+profile 0
+
+rateprofile 0
+
+rateprofile 1
+
+rateprofile 2
+
+rateprofile 3
+
+# restore original rateprofile selection
+rateprofile 0
+
+# save configuration
